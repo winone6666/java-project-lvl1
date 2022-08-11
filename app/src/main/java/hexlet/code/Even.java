@@ -1,29 +1,35 @@
 package hexlet.code;
-
 import java.util.Scanner;
 
 public class Even {
-    static String userName;
+    private static String userName;
+    static final int MULTIPLIER_TO_GET_INT = 100;
+    static int countOfQuestions = 3;
 
     public static void printEvenGameDescription() {
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
+    }
+    public static String getUserName() {
+        return userName;
+    }
+
+    public static void setUserName(String name) {
+        userName = name;
     }
 
     public static void printGreeting() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("May I have your name?");
-        userName = scanner.nextLine();
-        System.out.println("Hello, " + userName + "!");
+        setUserName(scanner.nextLine());
+        System.out.println("Hello, " + getUserName() + "!");
     }
 
     public static void playEvenGame() {
         printEvenGameDescription();
-        int multiplierToGetInt = 100;
         Scanner scanner = new Scanner(System.in);
-        int count = 3;
 
-        while (count > 0) {
-            int randNum = (int) (Math.random() * multiplierToGetInt);
+        while (countOfQuestions > 0) {
+            int randNum = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
             int checkParity = randNum % 2;
             String referenceAnswer;
 
@@ -35,15 +41,15 @@ public class Even {
 
             if (userAnswer.equals(referenceAnswer)) {
                 System.out.println("Correct!");
-                count--;
-                if (count == 0) {
-                    System.out.println("Congratulations, " + userName + "!");
+                countOfQuestions--;
+                if (countOfQuestions == 0) {
+                    System.out.println("Congratulations, " + getUserName() + "!");
                 }
             } else {
                 System.out.println("'" + userAnswer
                         +  "' is wrong answer ;(. Correct answer was '"
                         + referenceAnswer + "'.\n" + "Let's try again, "
-                        + userName);
+                        + getUserName());
                 break;
             }
         }
