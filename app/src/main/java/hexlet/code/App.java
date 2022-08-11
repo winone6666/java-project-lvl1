@@ -20,8 +20,9 @@ public class App {
                 break;
             case (2):
                 printGreeting();
-                printGameDescription();
-                checkParyOfRandNum();
+                playEvenGame();
+                break;
+            case (3):
                 break;
         }
     }

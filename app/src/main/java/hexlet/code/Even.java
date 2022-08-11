@@ -1,46 +1,51 @@
 package hexlet.code;
 
 import java.util.Scanner;
-import java.lang.Math;
 
 public class Even {
     static String userName;
 
-    public static void printGameDescription() {
+    public static void printEvenGameDescription() {
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
     }
 
-    public static void printGreeting(){
+    public static void printGreeting() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("May I have your name?");
         userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
     }
-    public static int generateRand() {
-        return (int) (Math.random() * 100);
-    }
-    public static void checkParyOfRandNum(){
 
+    public static void playEvenGame() {
+        printEvenGameDescription();
+        int multiplierToGetInt = 100;
         Scanner scanner = new Scanner(System.in);
         int count = 3;
 
-        while(count > 0) {
-            int randNum = generateRand();
+        while (count > 0) {
+            int randNum = (int) (Math.random() * multiplierToGetInt);
+            int checkParity = randNum % 2;
+            String referenceAnswer;
+
+            referenceAnswer = checkParity == 0 ? "yes" : "no";
 
             System.out.println("Question: " + randNum);
-            int checkParity = randNum % 2;
             String userAnswer = scanner.nextLine();
             System.out.println("Your answer: " + userAnswer);
-            if((checkParity == 0 && userAnswer.equals("yes")) || (checkParity == 1 && userAnswer.equals("no"))){
+
+            if (userAnswer.equals(referenceAnswer)) {
                 System.out.println("Correct!");
                 count--;
-            }
-            else {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" + "Let's try again, " + userName);
-                count = 3;
+                if (count == 0) {
+                    System.out.println("Congratulations, " + userName + "!");
+                }
+            } else {
+                System.out.println("'" + userAnswer
+                        +  "' is wrong answer ;(. Correct answer was '"
+                        + referenceAnswer + "'.\n" + "Let's try again, "
+                        + userName);
+                break;
             }
         }
-        System.out.println("Congratulations, " + userName);
-
     }
 }
