@@ -2,7 +2,6 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.Engine.askQustion;
 
 public class Engine {
     public static final int MULTIPLIER_TO_GET_INT = 100;
@@ -20,24 +19,19 @@ public class Engine {
         System.out.println("Question: " + expression);
     }
 
-    public static void compareUserAnswerWithReference(String userAnswer, String refAnswer, String question) {
-        int countOfQuestions = COUNT_OF_QUESTION;
+    public static void compareUserAnswerAndReference(String[][] questionsAndAnswers, String[] referenceAnswer) {
 
-        while (countOfQuestions > 0) {
-            System.out.println("Your answer: " + userAnswer);
-            askQustion(question);
-            getUserAnswer();
-
-            if (userAnswer.equals(refAnswer)) {
+        for (int i = COUNT_OF_QUESTION; i > 0; i--) {
+            askQustion(questionsAndAnswers[0][i-1]);
+            questionsAndAnswers[1][i-1] = getUserAnswer();
+            System.out.println("Your answer: " + questionsAndAnswers[1][i-1]);
+            if (questionsAndAnswers[1][i-1].equals(referenceAnswer[i-1])) {
                 System.out.println("Correct!");
-                countOfQuestions--;
-
-                if (countOfQuestions == 0) {
+                if (i == 1) {
                     System.out.println("Congratulations, " + getUserName() + "!");
                 }
-
             } else {
-                printUserMistake(userAnswer, refAnswer);
+                printUserMistake(questionsAndAnswers[1][i-1], referenceAnswer[i-1]);
                 break;
             }
         }

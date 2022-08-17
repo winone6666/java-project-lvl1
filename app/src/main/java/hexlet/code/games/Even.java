@@ -1,5 +1,4 @@
 package hexlet.code.games;
-import java.util.Scanner;
 
 import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.COUNT_OF_QUESTION;
@@ -13,13 +12,17 @@ public class Even {
 
     public static void playEvenGame() {
 
-        int countOfQuestions = 3;
-        int randNum = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
-        int checkParity = randNum % 2;
-        String referenceAnswer;
-        referenceAnswer = checkParity == 0 ? "yes" : "no";
-        String exp = Integer.toString(randNum);
+        String[][] questionsAndAnswers = new String[2][3];
+        String[] referenceAnswer = new String[3];
 
-        compareUserAnswerWithReference(getUserAnswer(), referenceAnswer, exp);
+        for (int i = 0; i < COUNT_OF_QUESTION; i++) {
+            int randNum = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
+            String question = Integer.toString(randNum);
+            questionsAndAnswers[0][i] = question;
+            int checkParity = randNum % 2;
+            referenceAnswer[i] = checkParity == 0 ? "yes" : "no";
+        }
+
+        compareUserAnswerAndReference(questionsAndAnswers, referenceAnswer);
     }
 }

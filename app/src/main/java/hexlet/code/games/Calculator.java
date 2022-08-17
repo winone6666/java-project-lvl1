@@ -1,33 +1,33 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
-
 import static hexlet.code.Engine.*;
-import static java.lang.Integer.parseInt;
 
 public class Calculator {
 
     public static void playCalculatorgame() {
+        String[][] questionsAndAnswers = new String[2][3];
+        String[] referenceAnswer = new String[3];
 
-        String[] operators = {"-", "+", "*"};
-        int referenceAnswer = 0;
-        int randMultiplier1 = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
-        int randMultiplier2 = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
-        int randOperator = (int) (Math.random() * ((3 - 1) + 1));
+        for (int i = 0; i < COUNT_OF_QUESTION; i++) {
 
-        switch (operators[randOperator]) {
-            case ("-") -> referenceAnswer = randMultiplier1 - randMultiplier2;
-            case ("+") -> referenceAnswer = randMultiplier1 + randMultiplier2;
-            case ("*") -> referenceAnswer = randMultiplier1 * randMultiplier2;
-            default -> {
+            String[] operators = {"-", "+", "*"};
+            int randMultFirst = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
+            int randMultSecond = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
+            int randOperator = (int) (Math.random() * ((3 - 1) + 1));
+
+            switch (operators[randOperator]) {
+                case ("-") -> referenceAnswer[i] = Integer.toString(randMultFirst - randMultSecond);
+                case ("+") -> referenceAnswer[i] = Integer.toString(randMultFirst + randMultSecond);
+                case ("*") -> referenceAnswer[i] = Integer.toString(randMultFirst * randMultSecond);
+                default -> {
+                }
             }
+            String question = randMultFirst + " "
+                    + operators[randOperator] + " "
+                    + randMultSecond;
+
+            questionsAndAnswers[0][i] = question;
         }
-        String question = randMultiplier1 + " "
-                + operators[randOperator] + " "
-                + randMultiplier2;
-
-        askQustion(question);
-        compareUserAnswerWithReference(getUserAnswer(), Integer.toString(referenceAnswer), question);
-
+       compareUserAnswerAndReference(questionsAndAnswers, referenceAnswer);
     }
 }
