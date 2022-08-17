@@ -8,6 +8,7 @@ import static hexlet.code.games.GameCalculator.playCalculatorgame;
 import static hexlet.code.games.GameCalculator.printCalcGameDescription;
 import static hexlet.code.games.GameEven.*;
 import static hexlet.code.games.GameGCD.*;
+import static hexlet.code.games.GameProgression.printProgressionGameDescription;
 
 public class App {
 
@@ -19,6 +20,7 @@ public class App {
                 2 - Even
                 3 - Calculator
                 4 - GCD
+                5 - Progression
                 0 - Exit
                 """);
 
@@ -43,8 +45,16 @@ public class App {
                 printGCDGameDescription();
                 playGCDGame();
             }
+            case (5) -> {
+                printGreeting();
+                printProgressionGameDescription();
+                playProgressionGame();
+            }
             default -> {
             }
         }
+    }
+
+    private static void playProgressionGame() {
     }
 }
