@@ -13,7 +13,15 @@ public class App {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the game number and press Enter.\n1 - Greet\n2 - Even\n3 - Calculator\n4 - GCD\n0 - Exit");
+        System.out.println("""
+                Please enter the game number and press Enter.
+                1 - Greet
+                2 - Even
+                3 - Calculator
+                4 - GCD
+                0 - Exit
+                """);
+
         int numOfGame = scanner.nextInt();
         System.out.println("Your choice: " + numOfGame);
         System.out.println("\nWelcome to the Brain Games!");
