@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 import static hexlet.code.Cli.greetingUser;
 import static hexlet.code.Engine.printGreeting;
-import static hexlet.code.games.Calculator.playCalculatorgame;
-import static hexlet.code.games.Calculator.printCalcGameDescription;
-import static hexlet.code.games.Even.*;
+import static hexlet.code.games.GameCalculator.playCalculatorgame;
+import static hexlet.code.games.GameCalculator.printCalcGameDescription;
+import static hexlet.code.games.GameEven.*;
 
 public class App {
 

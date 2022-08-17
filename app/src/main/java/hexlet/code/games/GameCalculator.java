@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import static hexlet.code.Engine.*;
 
-public class Calculator {
+public class GameCalculator {
     public static final int MIN_COUNT_OPERANDS = 1;
     public static final int MAX_COUNT_OPERANDS = 3;
 
