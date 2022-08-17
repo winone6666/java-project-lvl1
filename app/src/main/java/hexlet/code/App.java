@@ -5,6 +5,7 @@ import java.util.Scanner;
 import static hexlet.code.Cli.greetingUser;
 import static hexlet.code.Engine.printGreeting;
 import static hexlet.code.games.Calculator.playCalculatorgame;
+import static hexlet.code.games.Calculator.printCalcGameDescription;
 import static hexlet.code.games.Even.*;
 
 public class App {
@@ -25,6 +26,7 @@ public class App {
             }
             case (3) -> {
                 printGreeting();
+                printCalcGameDescription();
                 playCalculatorgame();
             }
             default -> {

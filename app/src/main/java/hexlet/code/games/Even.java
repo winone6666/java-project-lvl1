@@ -12,9 +12,6 @@ public class Even {
 
     public static void playEvenGame() {
 
-        String[][] questionsAndAnswers = new String[2][3];
-        String[] referenceAnswer = new String[3];
-
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
             int randNum = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
             String question = Integer.toString(randNum);

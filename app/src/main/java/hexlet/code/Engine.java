@@ -7,6 +7,10 @@ public class Engine {
     public static final int MULTIPLIER_TO_GET_INT = 100;
     public static final int COUNT_OF_QUESTION = 3;
     private static String userName;
+    public static String[][] questionsAndAnswers = new String[2][3];
+    public static String[] referenceAnswer = new String[3];
+    public static String userAnswer;
+    public static String refAnswer;
 
 
     public static String getUserAnswer() {
@@ -22,16 +26,20 @@ public class Engine {
     public static void compareUserAnswerAndReference(String[][] questionsAndAnswers, String[] referenceAnswer) {
 
         for (int i = COUNT_OF_QUESTION; i > 0; i--) {
+
             askQustion(questionsAndAnswers[0][i-1]);
             questionsAndAnswers[1][i-1] = getUserAnswer();
-            System.out.println("Your answer: " + questionsAndAnswers[1][i-1]);
-            if (questionsAndAnswers[1][i-1].equals(referenceAnswer[i-1])) {
+            userAnswer = questionsAndAnswers[1][i-1];
+            System.out.println("Your answer: " + userAnswer);
+            refAnswer = referenceAnswer[i-1];
+
+            if (userAnswer.equals(refAnswer)) {
                 System.out.println("Correct!");
                 if (i == 1) {
                     System.out.println("Congratulations, " + getUserName() + "!");
                 }
             } else {
-                printUserMistake(questionsAndAnswers[1][i-1], referenceAnswer[i-1]);
+                printUserMistake(userAnswer, refAnswer);
                 break;
             }
         }
