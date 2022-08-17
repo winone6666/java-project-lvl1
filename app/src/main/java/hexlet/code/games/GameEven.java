@@ -13,11 +13,13 @@ public class GameEven {
     public static void playEvenGame() {
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
+
             int randNum = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
             String question = Integer.toString(randNum);
             questionsAndAnswers[0][i] = question;
             int checkParity = randNum % 2;
             referenceAnswer[i] = checkParity == 0 ? "yes" : "no";
+
         }
 
         compareUserAnswerAndReference(questionsAndAnswers, referenceAnswer);
