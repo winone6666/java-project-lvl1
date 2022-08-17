@@ -8,16 +8,16 @@ public class GameGCD {
         System.out.println("Find the greatest common divisor of given numbers.");
     }
 
-    static int numFirst = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
-    static int numSecond = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
-
     public static void playGCDGame() {
 
-        for (int i = COUNT_OF_QUESTION; i > 0; i--) {
+        for (int i = 0; i < COUNT_OF_QUESTION; i++) {
+
+            int numFirst = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
+            int numSecond = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
 
             String nFirst = Integer.toString(numFirst);
             String nSecond = Integer.toString(numSecond);
-            String question = nFirst + nSecond;
+            String question = nFirst + " " + nSecond;
 
             questionsAndAnswers[0][i] = question;
 
@@ -25,8 +25,9 @@ public class GameGCD {
                 int temp = numFirst % numSecond;
                 numFirst = numSecond;
                 numSecond = temp;
-                referenceAnswer[i] = Integer.toString(numFirst);
             }
+            referenceAnswer[i] = Integer.toString(numFirst);
         }
+        compareUserAnswerAndReference(questionsAndAnswers, referenceAnswer);
         }
 }
