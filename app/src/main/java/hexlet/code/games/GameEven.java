@@ -1,16 +1,15 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.COUNT_OF_QUESTION;
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
+import static hexlet.code.Engine.questionsAndAnswers;
+import static hexlet.code.Engine.referenceAnswer;
+import static hexlet.code.Engine.compareUserAnswerAndReference;
 
 public class GameEven {
 
-    public static void printEvenGameDescription() {
-        System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-    }
-
     public static void playEvenGame() {
+        System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
 

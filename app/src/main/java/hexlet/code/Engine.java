@@ -6,9 +6,10 @@ import java.util.Scanner;
 public class Engine {
     public static final int MULTIPLIER_TO_GET_INT = 100;
     public static final int COUNT_OF_QUESTION = 3;
+    public static final int COUNT_OF_PAIR_QUESTIONS_ANSWERS = 2;
     private static String userName;
-    public static String[][] questionsAndAnswers = new String[2][3];
-    public static String[] referenceAnswer = new String[3];
+    public static String[][] questionsAndAnswers = new String[COUNT_OF_PAIR_QUESTIONS_ANSWERS][COUNT_OF_QUESTION];
+    public static String[] referenceAnswer = new String[COUNT_OF_QUESTION];
     public static String userAnswer;
     public static String refAnswer;
 
@@ -19,7 +20,7 @@ public class Engine {
         return userAnswer;
     }
 
-    public static void askQustion (String expression) {
+    public static void askQustion(String expression) {
         System.out.println("Question: " + expression);
     }
 
@@ -27,11 +28,11 @@ public class Engine {
 
         for (int i = COUNT_OF_QUESTION; i > 0; i--) {
 
-            askQustion(questionsAndAnswers[0][i-1]);
-            questionsAndAnswers[1][i-1] = getUserAnswer();
-            userAnswer = questionsAndAnswers[1][i-1];
+            askQustion(questionsAndAnswers[0][i - 1]);
+            questionsAndAnswers[1][i - 1] = getUserAnswer();
+            userAnswer = questionsAndAnswers[1][i - 1];
             System.out.println("Your answer: " + userAnswer);
-            refAnswer = referenceAnswer[i-1];
+            refAnswer = referenceAnswer[i - 1];
 
             if (userAnswer.equals(refAnswer)) {
                 System.out.println("Correct!");
@@ -61,6 +62,7 @@ public class Engine {
     }
 
     public static void printGreeting() {
+        System.out.println("Welcome to the Brain Games!");
         Scanner scanner = new Scanner(System.in);
         System.out.println("May I have your name?");
         setUserName(scanner.nextLine());

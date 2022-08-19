@@ -1,16 +1,17 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.COUNT_OF_QUESTION;
+import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
+import static hexlet.code.Engine.questionsAndAnswers;
+import static hexlet.code.Engine.referenceAnswer;
+import static hexlet.code.Engine.compareUserAnswerAndReference;
 
 public class GameCalculator {
     public static final int MIN_COUNT_OPERANDS = 1;
     public static final int MAX_COUNT_OPERANDS = 3;
 
-    public static void printCalcGameDescription() {
-        System.out.println("What is the result of the expression?");
-    }
-
     public static void playCalculatorgame() {
+        System.out.println("What is the result of the expression?");
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
 
@@ -33,6 +34,6 @@ public class GameCalculator {
 
             questionsAndAnswers[0][i] = question;
         }
-       compareUserAnswerAndReference(questionsAndAnswers, referenceAnswer);
+        compareUserAnswerAndReference(questionsAndAnswers, referenceAnswer);
     }
 }

@@ -5,15 +5,19 @@ import java.util.Scanner;
 import static hexlet.code.Cli.greetingUser;
 import static hexlet.code.Engine.printGreeting;
 import static hexlet.code.games.GameCalculator.playCalculatorgame;
-import static hexlet.code.games.GameCalculator.printCalcGameDescription;
-import static hexlet.code.games.GameEven.*;
-import static hexlet.code.games.GameGCD.*;
+import static hexlet.code.games.GameEven.playEvenGame;
+import static hexlet.code.games.GameGCD.playGCDGame;
 import static hexlet.code.games.GamePrime.playPrimeGame;
-import static hexlet.code.games.GamePrime.printPrimeGameDescription;
 import static hexlet.code.games.GameProgression.playProgressionGame;
-import static hexlet.code.games.GameProgression.printProgressionGameDescription;
 
 public class App {
+    private static final int EXIT = 0;
+    private static final int GREET = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -30,38 +34,36 @@ public class App {
 
         int numOfGame = scanner.nextInt();
         System.out.println("Your choice: " + numOfGame);
-        System.out.println("\nWelcome to the Brain Games!");
+
 
         switch (numOfGame) {
-            case (1) -> greetingUser();
-            case (2) -> {
+            case GREET -> greetingUser();
+            case EVEN -> {
                 printGreeting();
-                printEvenGameDescription();
                 playEvenGame();
             }
-            case (3) -> {
+            case CALC -> {
                 printGreeting();
-                printCalcGameDescription();
                 playCalculatorgame();
             }
-            case (4) -> {
+            case GCD -> {
                 printGreeting();
-                printGCDGameDescription();
                 playGCDGame();
             }
-            case (5) -> {
+            case PROGRESSION -> {
                 printGreeting();
-                printProgressionGameDescription();
                 playProgressionGame();
             }
-            case (6) -> {
+            case PRIME -> {
                 printGreeting();
-                printPrimeGameDescription();
                 playPrimeGame();
             }
-            default -> {
+            case EXIT -> {
+                System.out.println("Your choice: " + numOfGame + "." + " Bye!");
+                return;
             }
+            default -> System.out.println("Unexpected number: " + numOfGame + ". "
+                        + "Please select game again.");
         }
     }
-
 }
