@@ -3,7 +3,7 @@ package hexlet.code.games;
 import static hexlet.code.Engine.COUNT_OF_QUESTION;
 import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.questionsAndAnswers;
-import static hexlet.code.Engine.referenceAnswer;
+import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.compareUserAnswerAndReference;
 
 public class GameCalculator {
@@ -11,6 +11,8 @@ public class GameCalculator {
     public static final int MAX_COUNT_OPERANDS = 3;
 
     public static void playCalculatorgame() {
+
+        String[] referAnswers = getReferenceAnswer();
         System.out.println("What is the result of the expression?");
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
@@ -22,9 +24,9 @@ public class GameCalculator {
 
             int randOperator = (int) (Math.random() * ((MAX_COUNT_OPERANDS - MIN_COUNT_OPERANDS) + MIN_COUNT_OPERANDS));
             switch (operators[randOperator]) {
-                case ("-") -> referenceAnswer[i] = Integer.toString(randMultFirst - randMultSecond);
-                case ("+") -> referenceAnswer[i] = Integer.toString(randMultFirst + randMultSecond);
-                case ("*") -> referenceAnswer[i] = Integer.toString(randMultFirst * randMultSecond);
+                case ("-") -> referAnswers[i] = Integer.toString(randMultFirst - randMultSecond);
+                case ("+") -> referAnswers[i] = Integer.toString(randMultFirst + randMultSecond);
+                case ("*") -> referAnswers[i] = Integer.toString(randMultFirst * randMultSecond);
                 default -> {
                 }
             }

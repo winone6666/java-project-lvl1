@@ -1,10 +1,9 @@
 package hexlet.code.games;
 
 import java.util.Arrays;
-
 import static hexlet.code.Engine.COUNT_OF_QUESTION;
 import static hexlet.code.Engine.questionsAndAnswers;
-import static hexlet.code.Engine.referenceAnswer;
+import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.compareUserAnswerAndReference;
 
 public class GameProgression {
@@ -14,9 +13,9 @@ public class GameProgression {
     public static final int START_NUM_MAX = 50;
     public static final int D_MIN = 1;
     public static final int D_MAX = 10;
-    //public static final int UNIT = 1;
 
     public static void playProgressionGame() {
+        String[] referAnswers = getReferenceAnswer();
         System.out.println("What number is missing in the progression?");
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
@@ -32,7 +31,7 @@ public class GameProgression {
             for (int j = 1; j < lengthProgression; j++) {
                 progressionSeries[j] = Integer.toString(Integer.parseInt(progressionSeries[0]) + d * j);
             }
-            referenceAnswer[i] = progressionSeries[indexOfHiddenNum];
+            referAnswers[i] = progressionSeries[indexOfHiddenNum];
             progressionSeries[indexOfHiddenNum] = "...";
             String question = String.join(" ", Arrays.toString(progressionSeries).split(", "));
             questionsAndAnswers[0][i] = question.substring(1, question.length() - 1);

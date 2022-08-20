@@ -9,10 +9,13 @@ public class Engine {
     public static final int COUNT_OF_PAIR_QUESTIONS_ANSWERS = 2;
     private static String userName;
     public static String[][] questionsAndAnswers = new String[COUNT_OF_PAIR_QUESTIONS_ANSWERS][COUNT_OF_QUESTION];
-    public static String[] referenceAnswer = new String[COUNT_OF_QUESTION];
-    public static String userAnswer;
-    public static String refAnswer;
+    private static final String[] referenceAnswer = new String[COUNT_OF_QUESTION];
+    private static String userAnswer;
+    private static String refAnswer;
 
+    public static String[] getReferenceAnswer() {
+        return referenceAnswer;
+    }
 
     public static String getUserAnswer() {
         Scanner scanner = new Scanner(System.in);

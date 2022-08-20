@@ -60,7 +60,6 @@ public class App {
             }
             case EXIT -> {
                 System.out.println("Your choice: " + numOfGame + "." + " Bye!");
-                return;
             }
             default -> System.out.println("Unexpected number: " + numOfGame + ". "
                         + "Please select game again.");

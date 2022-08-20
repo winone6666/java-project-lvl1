@@ -3,12 +3,13 @@ package hexlet.code.games;
 import static hexlet.code.Engine.COUNT_OF_QUESTION;
 import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.questionsAndAnswers;
-import static hexlet.code.Engine.referenceAnswer;
+import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.compareUserAnswerAndReference;
 
 public class GamePrime {
 
     public static void playPrimeGame() {
+        String[] referAnswers = getReferenceAnswer();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int temp;
         boolean isPrime = true;
@@ -25,7 +26,7 @@ public class GamePrime {
                     break;
                 }
             }
-            referenceAnswer[i] = isPrime ? "yes" : "no";
+            referAnswers[i] = isPrime ? "yes" : "no";
         }
         compareUserAnswerAndReference();
     }

@@ -3,12 +3,13 @@ package hexlet.code.games;
 import static hexlet.code.Engine.COUNT_OF_QUESTION;
 import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.questionsAndAnswers;
-import static hexlet.code.Engine.referenceAnswer;
+import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.compareUserAnswerAndReference;
 
 public class GameGCD {
 
     public static void playGCDGame() {
+        String[] referAnswers = getReferenceAnswer();
         System.out.println("Find the greatest common divisor of given numbers.");
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
@@ -27,7 +28,7 @@ public class GameGCD {
                 numFirst = numSecond;
                 numSecond = temp;
             }
-            referenceAnswer[i] = Integer.toString(numFirst);
+            referAnswers[i] = Integer.toString(numFirst);
         }
         compareUserAnswerAndReference();
     }
