@@ -2,8 +2,8 @@ package hexlet.code.games;
 
 import java.util.Arrays;
 import static hexlet.code.Engine.COUNT_OF_QUESTION;
-import static hexlet.code.Engine.questionsAndAnswers;
 import static hexlet.code.Engine.getReferenceAnswer;
+import static hexlet.code.Engine.getQuestionsAndAnswers;
 import static hexlet.code.Engine.compareUserAnswerAndReference;
 
 public class GameProgression {
@@ -16,6 +16,7 @@ public class GameProgression {
 
     public static void playProgressionGame() {
         String[] referAnswers = getReferenceAnswer();
+        String[][] questionsAnswers = getQuestionsAndAnswers();
         System.out.println("What number is missing in the progression?");
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
@@ -34,7 +35,7 @@ public class GameProgression {
             referAnswers[i] = progressionSeries[indexOfHiddenNum];
             progressionSeries[indexOfHiddenNum] = "...";
             String question = String.join(" ", Arrays.toString(progressionSeries).split(", "));
-            questionsAndAnswers[0][i] = question.substring(1, question.length() - 1);
+            questionsAnswers[0][i] = question.substring(1, question.length() - 1);
         }
         compareUserAnswerAndReference();
     }

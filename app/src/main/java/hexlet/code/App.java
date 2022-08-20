@@ -35,7 +35,6 @@ public class App {
         int numOfGame = scanner.nextInt();
         System.out.println("Your choice: " + numOfGame);
 
-
         switch (numOfGame) {
             case GREET -> greetingUser();
             case EVEN -> {

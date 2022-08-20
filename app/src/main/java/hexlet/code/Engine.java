@@ -8,13 +8,17 @@ public class Engine {
     public static final int COUNT_OF_QUESTION = 3;
     public static final int COUNT_OF_PAIR_QUESTIONS_ANSWERS = 2;
     private static String userName;
-    public static String[][] questionsAndAnswers = new String[COUNT_OF_PAIR_QUESTIONS_ANSWERS][COUNT_OF_QUESTION];
-    private static final String[] referenceAnswer = new String[COUNT_OF_QUESTION];
+    private static final String[][] QUESTIONS_ANSWERS = new String[COUNT_OF_PAIR_QUESTIONS_ANSWERS][COUNT_OF_QUESTION];
+    private static final String[] REFERENCE_ANSWERS = new String[COUNT_OF_QUESTION];
     private static String userAnswer;
     private static String refAnswer;
 
     public static String[] getReferenceAnswer() {
-        return referenceAnswer;
+        return REFERENCE_ANSWERS;
+    }
+
+    public static String[][] getQuestionsAndAnswers() {
+        return QUESTIONS_ANSWERS;
     }
 
     public static String getUserAnswer() {
@@ -31,11 +35,11 @@ public class Engine {
 
         for (int i = COUNT_OF_QUESTION; i > 0; i--) {
 
-            askQustion(questionsAndAnswers[0][i - 1]);
-            questionsAndAnswers[1][i - 1] = getUserAnswer();
-            userAnswer = questionsAndAnswers[1][i - 1];
+            askQustion(QUESTIONS_ANSWERS[0][i - 1]);
+            QUESTIONS_ANSWERS[1][i - 1] = getUserAnswer();
+            userAnswer = QUESTIONS_ANSWERS[1][i - 1];
             System.out.println("Your answer: " + userAnswer);
-            refAnswer = referenceAnswer[i - 1];
+            refAnswer = REFERENCE_ANSWERS[i - 1];
 
             if (userAnswer.equals(refAnswer)) {
                 System.out.println("Correct!");

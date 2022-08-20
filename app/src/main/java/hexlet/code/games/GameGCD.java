@@ -2,14 +2,15 @@ package hexlet.code.games;
 
 import static hexlet.code.Engine.COUNT_OF_QUESTION;
 import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
-import static hexlet.code.Engine.questionsAndAnswers;
 import static hexlet.code.Engine.getReferenceAnswer;
+import static hexlet.code.Engine.getQuestionsAndAnswers;
 import static hexlet.code.Engine.compareUserAnswerAndReference;
 
 public class GameGCD {
 
     public static void playGCDGame() {
         String[] referAnswers = getReferenceAnswer();
+        String[][] questionsAnswers = getQuestionsAndAnswers();
         System.out.println("Find the greatest common divisor of given numbers.");
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
@@ -21,7 +22,7 @@ public class GameGCD {
             String nSecond = Integer.toString(numSecond);
             String question = nFirst + " " + nSecond;
 
-            questionsAndAnswers[0][i] = question;
+            questionsAnswers[0][i] = question;
 
             while (numSecond != 0) {
                 int temp = numFirst % numSecond;
