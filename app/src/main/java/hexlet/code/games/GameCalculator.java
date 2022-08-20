@@ -34,6 +34,6 @@ public class GameCalculator {
 
             questionsAndAnswers[0][i] = question;
         }
-        compareUserAnswerAndReference(questionsAndAnswers, referenceAnswer);
+        compareUserAnswerAndReference();
     }
 }

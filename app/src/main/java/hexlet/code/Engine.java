@@ -16,7 +16,7 @@ public class Engine {
 
     public static String getUserAnswer() {
         Scanner scanner = new Scanner(System.in);
-        String userAnswer = scanner.nextLine();
+        userAnswer = scanner.nextLine();
         return userAnswer;
     }
 
@@ -24,7 +24,7 @@ public class Engine {
         System.out.println("Question: " + expression);
     }
 
-    public static void compareUserAnswerAndReference(String[][] questionsAndAnswers, String[] referenceAnswer) {
+    public static void compareUserAnswerAndReference() {
 
         for (int i = COUNT_OF_QUESTION; i > 0; i--) {
 
@@ -40,16 +40,16 @@ public class Engine {
                     System.out.println("Congratulations, " + getUserName() + "!");
                 }
             } else {
-                printUserMistake(userAnswer, refAnswer);
+                printUserMistake();
                 break;
             }
         }
     }
 
-    public static void printUserMistake(String userAnswer, String referenceAnswer) {
+    public static void printUserMistake() {
         System.out.println("'" + userAnswer
                 +  "' is wrong answer ;(. Correct answer was '"
-                + referenceAnswer + "'.\n" + "Let's try again, "
+                + refAnswer + "'.\n" + "Let's try again, "
                 + getUserName());
     }
 

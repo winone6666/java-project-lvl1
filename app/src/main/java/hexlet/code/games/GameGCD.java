@@ -29,6 +29,6 @@ public class GameGCD {
             }
             referenceAnswer[i] = Integer.toString(numFirst);
         }
-        compareUserAnswerAndReference(questionsAndAnswers, referenceAnswer);
+        compareUserAnswerAndReference();
     }
 }

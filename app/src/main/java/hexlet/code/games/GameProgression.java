@@ -14,7 +14,7 @@ public class GameProgression {
     public static final int START_NUM_MAX = 50;
     public static final int D_MIN = 1;
     public static final int D_MAX = 10;
-    public static final int UNIT = 1;
+    //public static final int UNIT = 1;
 
     public static void playProgressionGame() {
         System.out.println("What number is missing in the progression?");
@@ -26,7 +26,7 @@ public class GameProgression {
             int startProgressionNum = (int) ((Math.random() * (START_NUM_MAX -  START_NUM_MIN)) + START_NUM_MIN);
             int d = (int) ((Math.random() * (D_MAX - D_MIN)) + D_MIN);
             progressionSeries[0] = Integer.toString(startProgressionNum);
-            int indexOfHiddenNum = (int) (Math.random() * ((lengthProgression - UNIT) + UNIT));
+            int indexOfHiddenNum = (int) (Math.random() * ((lengthProgression - 1) + 1));
 
 
             for (int j = 1; j < lengthProgression; j++) {
@@ -35,8 +35,8 @@ public class GameProgression {
             referenceAnswer[i] = progressionSeries[indexOfHiddenNum];
             progressionSeries[indexOfHiddenNum] = "...";
             String question = String.join(" ", Arrays.toString(progressionSeries).split(", "));
-            questionsAndAnswers[0][i] = question.substring(UNIT, question.length() - UNIT);
+            questionsAndAnswers[0][i] = question.substring(1, question.length() - 1);
         }
-        compareUserAnswerAndReference(questionsAndAnswers, referenceAnswer);
+        compareUserAnswerAndReference();
     }
 }

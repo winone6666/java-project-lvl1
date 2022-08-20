@@ -27,6 +27,6 @@ public class GamePrime {
             }
             referenceAnswer[i] = isPrime ? "yes" : "no";
         }
-        compareUserAnswerAndReference(questionsAndAnswers, referenceAnswer);
+        compareUserAnswerAndReference();
     }
 }

@@ -20,6 +20,6 @@ public class GameEven {
             referenceAnswer[i] = checkParity == 0 ? "yes" : "no";
 
         }
-        compareUserAnswerAndReference(questionsAndAnswers, referenceAnswer);
+        compareUserAnswerAndReference();
     }
 }
