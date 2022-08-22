@@ -34,7 +34,6 @@ public class Engine {
     public static void checkUserAnswers() {
 
         for (int i = COUNT_OF_QUESTION; i > 0; i--) {
-
             askQustion(QUESTIONS_ANSWERS[0][i - 1]);
             QUESTIONS_ANSWERS[1][i - 1] = getUserAnswer();
             userAnswer = QUESTIONS_ANSWERS[1][i - 1];
