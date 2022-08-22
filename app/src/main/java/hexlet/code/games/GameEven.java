@@ -4,7 +4,7 @@ import static hexlet.code.Engine.COUNT_OF_QUESTION;
 import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.getQuestionsAndAnswers;
-import static hexlet.code.Engine.compareUserAnswerAndReference;
+import static hexlet.code.Engine.checkUserAnswers;
 
 public class GameEven {
 
@@ -22,6 +22,6 @@ public class GameEven {
             referAnswers[i] = checkParity == 0 ? "yes" : "no";
 
         }
-        compareUserAnswerAndReference();
+        checkUserAnswers();
     }
 }

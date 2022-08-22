@@ -4,7 +4,7 @@ import static hexlet.code.Engine.COUNT_OF_QUESTION;
 import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.getQuestionsAndAnswers;
-import static hexlet.code.Engine.compareUserAnswerAndReference;
+import static hexlet.code.Engine.checkUserAnswers;
 
 public class GameGCD {
 
@@ -17,11 +17,9 @@ public class GameGCD {
 
             int numFirst = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
             int numSecond = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
-
             String nFirst = Integer.toString(numFirst);
             String nSecond = Integer.toString(numSecond);
             String question = nFirst + " " + nSecond;
-
             questionsAnswers[0][i] = question;
 
             while (numSecond != 0) {
@@ -31,6 +29,6 @@ public class GameGCD {
             }
             referAnswers[i] = Integer.toString(numFirst);
         }
-        compareUserAnswerAndReference();
+        checkUserAnswers();
     }
 }

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import static hexlet.code.Engine.COUNT_OF_QUESTION;
 import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.getQuestionsAndAnswers;
-import static hexlet.code.Engine.compareUserAnswerAndReference;
+import static hexlet.code.Engine.checkUserAnswers;
 
 public class GameProgression {
     public static final int LEN_PROGRESS_MIN = 5;
@@ -37,6 +37,6 @@ public class GameProgression {
             String question = String.join(" ", Arrays.toString(progressionSeries).split(", "));
             questionsAnswers[0][i] = question.substring(1, question.length() - 1);
         }
-        compareUserAnswerAndReference();
+        checkUserAnswers();
     }
 }

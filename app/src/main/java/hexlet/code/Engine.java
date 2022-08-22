@@ -31,7 +31,7 @@ public class Engine {
         System.out.println("Question: " + expression);
     }
 
-    public static void compareUserAnswerAndReference() {
+    public static void checkUserAnswers() {
 
         for (int i = COUNT_OF_QUESTION; i > 0; i--) {
 

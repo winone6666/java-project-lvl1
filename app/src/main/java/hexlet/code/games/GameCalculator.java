@@ -4,40 +4,53 @@ import static hexlet.code.Engine.COUNT_OF_QUESTION;
 import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.getQuestionsAndAnswers;
-import static hexlet.code.Engine.compareUserAnswerAndReference;
+import static hexlet.code.Engine.checkUserAnswers;
 
 public class GameCalculator {
     public static final int MIN_COUNT_OPERANDS = 1;
     public static final int MAX_COUNT_OPERANDS = 3;
 
     public static void playCalculatorgame() {
-
-        String[] referAnswers = getReferenceAnswer();
         String[][] questionsAnswers = getQuestionsAndAnswers();
+        String[] referAnswers = getReferenceAnswer();
 
         System.out.println("What is the result of the expression?");
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
-
-            String[] operators = {"-", "+", "*"};
-
+            String randOperator = getOperator();
             int randMultFirst = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
             int randMultSecond = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
 
-            int randOperator = (int) (Math.random() * ((MAX_COUNT_OPERANDS - MIN_COUNT_OPERANDS) + MIN_COUNT_OPERANDS));
-            switch (operators[randOperator]) {
-                case ("-") -> referAnswers[i] = Integer.toString(randMultFirst - randMultSecond);
-                case ("+") -> referAnswers[i] = Integer.toString(randMultFirst + randMultSecond);
-                case ("*") -> referAnswers[i] = Integer.toString(randMultFirst * randMultSecond);
-                default -> {
-                }
-            }
             String question = randMultFirst + " "
-                    + operators[randOperator] + " "
+                    + randOperator + " "
                     + randMultSecond;
 
             questionsAnswers[0][i] = question;
+
+            referAnswers[i] = Integer.toString(getRightAnswer(randOperator, randMultFirst, randMultSecond));
         }
-        compareUserAnswerAndReference();
+        checkUserAnswers();
+    }
+
+    public static String getOperator() {
+        String[] operators = {"-", "+", "*"};
+        int randOperator = (int) (Math.random() * ((MAX_COUNT_OPERANDS - MIN_COUNT_OPERANDS) + MIN_COUNT_OPERANDS));
+        return operators[randOperator];
+    }
+
+    public static int getRightAnswer(String operator, int multFirst, int multSecond) {
+        int rightAnswer = 0;
+
+        if (operator.equals("-")) {
+            rightAnswer = multFirst - multSecond;
+        }
+        if (operator.equals("+")) {
+            rightAnswer = multFirst + multSecond;
+        }
+        if (operator.equals("*")) {
+            rightAnswer = multFirst * multSecond;
+        }
+
+        return rightAnswer;
     }
 }

@@ -4,7 +4,7 @@ import static hexlet.code.Engine.COUNT_OF_QUESTION;
 import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.getQuestionsAndAnswers;
-import static hexlet.code.Engine.compareUserAnswerAndReference;
+import static hexlet.code.Engine.checkUserAnswers;
 
 public class GamePrime {
 
@@ -29,6 +29,6 @@ public class GamePrime {
             }
             referAnswers[i] = isPrime ? "yes" : "no";
         }
-        compareUserAnswerAndReference();
+        checkUserAnswers();
     }
 }
