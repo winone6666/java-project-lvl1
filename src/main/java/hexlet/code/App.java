@@ -11,7 +11,6 @@ import static hexlet.code.games.GamePrime.playPrimeGame;
 import static hexlet.code.games.GameProgression.playProgressionGame;
 
 public class App {
-    //check repo
     private static final int EXIT = 0;
     private static final int GREET = 1;
     private static final int EVEN = 2;
