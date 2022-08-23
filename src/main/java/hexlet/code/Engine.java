@@ -21,13 +21,13 @@ public class Engine {
         return QUESTIONS_ANSWERS;
     }
 
-    public static String getUserAnswer() {
+    private static String getUserAnswer() {
         Scanner scanner = new Scanner(System.in);
         userAnswer = scanner.nextLine();
         return userAnswer;
     }
 
-    public static void askQustion(String expression) {
+    private static void askQustion(String expression) {
         System.out.println("Question: " + expression);
     }
 
@@ -52,7 +52,7 @@ public class Engine {
         }
     }
 
-    public static void printUserMistake() {
+    private static void printUserMistake() {
         System.out.println("'" + userAnswer
                 +  "' is wrong answer ;(. Correct answer was '"
                 + refAnswer + "'.\n" + "Let's try again, "
@@ -63,7 +63,7 @@ public class Engine {
         return userName;
     }
 
-    public static void setUserName(String name) {
+    private static void setUserName(String name) {
         userName = name;
     }
 

@@ -5,6 +5,7 @@ import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.getQuestionsAndAnswers;
 import static hexlet.code.Engine.checkUserAnswers;
+import static hexlet.code.Util.getRandNum;
 
 public class GameCalculator {
     public static final int MIN_COUNT_OPERANDS = 1;
@@ -18,8 +19,8 @@ public class GameCalculator {
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
             String randOperator = getOperator();
-            int randMultFirst = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
-            int randMultSecond = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
+            int randMultFirst = getRandNum(MULTIPLIER_TO_GET_INT);
+            int randMultSecond = getRandNum(MULTIPLIER_TO_GET_INT);
 
             String question = randMultFirst + " "
                     + randOperator + " "
@@ -34,7 +35,7 @@ public class GameCalculator {
 
     public static String getOperator() {
         String[] operators = {"-", "+", "*"};
-        int randOperator = (int) (Math.random() * ((MAX_COUNT_OPERANDS - MIN_COUNT_OPERANDS) + MIN_COUNT_OPERANDS));
+        int randOperator = getRandNum((MAX_COUNT_OPERANDS - MIN_COUNT_OPERANDS) + MIN_COUNT_OPERANDS);
         return operators[randOperator];
     }
 

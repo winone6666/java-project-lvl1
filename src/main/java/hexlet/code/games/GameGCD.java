@@ -5,6 +5,7 @@ import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.getQuestionsAndAnswers;
 import static hexlet.code.Engine.checkUserAnswers;
+import static hexlet.code.Util.getRandNum;
 
 public class GameGCD {
 
@@ -15,8 +16,8 @@ public class GameGCD {
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
 
-            int numFirst = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
-            int numSecond = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
+            int numFirst = getRandNum(MULTIPLIER_TO_GET_INT);
+            int numSecond = getRandNum(MULTIPLIER_TO_GET_INT);
             String nFirst = Integer.toString(numFirst);
             String nSecond = Integer.toString(numSecond);
             String question = nFirst + " " + nSecond;

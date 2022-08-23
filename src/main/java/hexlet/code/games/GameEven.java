@@ -5,6 +5,7 @@ import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.getQuestionsAndAnswers;
 import static hexlet.code.Engine.checkUserAnswers;
+import static hexlet.code.Util.getRandNum;
 
 public class GameEven {
 
@@ -16,7 +17,7 @@ public class GameEven {
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
 
-            int randNum = (int) (Math.random() * MULTIPLIER_TO_GET_INT);
+            int randNum = getRandNum(MULTIPLIER_TO_GET_INT);
             String question = Integer.toString(randNum);
             questionsAnswers[0][i] = question;
             int checkParity = randNum % 2;
