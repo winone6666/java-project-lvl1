@@ -12,6 +12,11 @@ public class Engine {
     private static final String[] REFERENCE_ANSWERS = new String[COUNT_OF_QUESTION];
     private static String userAnswer;
     private static String refAnswer;
+    public static final String GAME_CALC_NAME = "Calculator game";
+    public static final String GAME_EVEN_NAME = "Even game";
+    public static final String GAME_PRIME_NAME = "Prime game";
+    public static final String GAME_PROGRESS_NAME = "Progression game";
+    public static final String GAME_GCD_NAME = "GCD game";
 
     public static String[] getReferenceAnswer() {
         return REFERENCE_ANSWERS;
@@ -73,5 +78,24 @@ public class Engine {
         System.out.println("May I have your name?");
         setUserName(scanner.nextLine());
         System.out.println("Hello, " + getUserName() + "!");
+    }
+
+    public static void descriptionGame(String gameName) {
+
+        if (gameName.equals(GAME_CALC_NAME)) {
+            System.out.println("What is the result of the expression?");
+        }
+        if (gameName.equals(GAME_EVEN_NAME)) {
+            System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
+        }
+        if (gameName.equals(GAME_GCD_NAME)) {
+            System.out.println("Find the greatest common divisor of given numbers.");
+        }
+        if (gameName.equals(GAME_PRIME_NAME)) {
+            System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        }
+        if (gameName.equals(GAME_PROGRESS_NAME)) {
+            System.out.println("What number is missing in the progression?");
+        }
     }
 }
