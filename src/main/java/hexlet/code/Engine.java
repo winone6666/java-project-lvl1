@@ -56,7 +56,7 @@ public class Engine {
         System.out.println("'" + userAnswer
                 +  "' is wrong answer ;(. Correct answer was '"
                 + refAnswer + "'.\n" + "Let's try again, "
-                + getUserName());
+                + getUserName() + "!");
     }
 
     public static String getUserName() {
