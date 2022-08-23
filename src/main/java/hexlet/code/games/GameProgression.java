@@ -33,7 +33,7 @@ public class GameProgression {
                 progressionSeries[j] = Integer.toString(Integer.parseInt(progressionSeries[0]) + d * j);
             }
             referAnswers[i] = progressionSeries[indexOfHiddenNum];
-            progressionSeries[indexOfHiddenNum] = "...";
+            progressionSeries[indexOfHiddenNum] = "..";
             String question = String.join(" ", Arrays.toString(progressionSeries).split(", "));
             questionsAnswers[0][i] = question.substring(1, question.length() - 1);
         }
