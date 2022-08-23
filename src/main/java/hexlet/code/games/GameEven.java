@@ -9,6 +9,7 @@ import static hexlet.code.Engine.checkUserAnswers;
 public class GameEven {
 
     public static void playEvenGame() {
+        //Checking
         String[] referAnswers = getReferenceAnswer();
         String[][] questionsAnswers = getQuestionsAndAnswers();
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
