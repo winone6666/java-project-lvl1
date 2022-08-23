@@ -26,10 +26,6 @@
 # Resolve links: $0 may be a link
 PRG="$0"
 # Need this for relative symlinks.
-before_install:
- # shellcheck disable=SC2215
- - chmod +x gradlew
-
 while [ -h "$PRG" ] ; do
     ls=`ls -ld "$PRG"`
     link=`expr "$ls" : '.*-> \(.*\)$'`
