@@ -2,7 +2,13 @@ package hexlet.code.games;
 
 import java.math.BigInteger;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.getReferenceAnswer;
+import static hexlet.code.Engine.getQuestionsAndAnswers;
+import static hexlet.code.Engine.descriptionGame;
+import static hexlet.code.Engine.GAME_PRIME_NAME;
+import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
+import static hexlet.code.Engine.COUNT_OF_QUESTION;
+import static hexlet.code.Engine.checkUserAnswers;
 import static hexlet.code.Util.getRandNum;
 
 public class GamePrime {
@@ -10,7 +16,7 @@ public class GamePrime {
     public static void playPrimeGame() {
         String[] referAnswers = getReferenceAnswer();
         String[][] questionsAnswers = getQuestionsAndAnswers();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        descriptionGame(GAME_PRIME_NAME);
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
 

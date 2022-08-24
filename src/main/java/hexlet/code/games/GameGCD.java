@@ -1,9 +1,11 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.COUNT_OF_QUESTION;
-import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.getQuestionsAndAnswers;
+import static hexlet.code.Engine.descriptionGame;
+import static hexlet.code.Engine.GAME_GCD_NAME;
+import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
+import static hexlet.code.Engine.COUNT_OF_QUESTION;
 import static hexlet.code.Engine.checkUserAnswers;
 import static hexlet.code.Util.getRandNum;
 
@@ -12,7 +14,7 @@ public class GameGCD {
     public static void playGCDGame() {
         String[] referAnswers = getReferenceAnswer();
         String[][] questionsAnswers = getQuestionsAndAnswers();
-        System.out.println("Find the greatest common divisor of given numbers.");
+        descriptionGame(GAME_GCD_NAME);
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
 

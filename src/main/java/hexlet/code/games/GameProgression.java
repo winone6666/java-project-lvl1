@@ -2,7 +2,12 @@ package hexlet.code.games;
 
 import java.util.Arrays;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.getReferenceAnswer;
+import static hexlet.code.Engine.getQuestionsAndAnswers;
+import static hexlet.code.Engine.descriptionGame;
+import static hexlet.code.Engine.GAME_PROGRESS_NAME;
+import static hexlet.code.Engine.COUNT_OF_QUESTION;
+import static hexlet.code.Engine.checkUserAnswers;
 import static hexlet.code.Util.getRandNum;
 
 public class GameProgression {
@@ -16,7 +21,7 @@ public class GameProgression {
     public static void playProgressionGame() {
         String[] referAnswers = getReferenceAnswer();
         String[][] questionsAnswers = getQuestionsAndAnswers();
-        System.out.println("What number is missing in the progression?");
+        descriptionGame(GAME_PROGRESS_NAME);
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
 

@@ -1,9 +1,11 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.COUNT_OF_QUESTION;
-import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
 import static hexlet.code.Engine.getReferenceAnswer;
 import static hexlet.code.Engine.getQuestionsAndAnswers;
+import static hexlet.code.Engine.descriptionGame;
+import static hexlet.code.Engine.GAME_CALC_NAME;
+import static hexlet.code.Engine.MULTIPLIER_TO_GET_INT;
+import static hexlet.code.Engine.COUNT_OF_QUESTION;
 import static hexlet.code.Engine.checkUserAnswers;
 import static hexlet.code.Util.getRandNum;
 
@@ -15,7 +17,7 @@ public class GameCalculator {
         String[][] questionsAnswers = getQuestionsAndAnswers();
         String[] referAnswers = getReferenceAnswer();
 
-        System.out.println("What is the result of the expression?");
+        descriptionGame(GAME_CALC_NAME);
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
             String randOperator = getOperator();
