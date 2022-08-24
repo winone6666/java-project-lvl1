@@ -58,9 +58,7 @@ public class App {
                 printGreeting();
                 playPrimeGame();
             }
-            case EXIT -> {
-                System.out.println("Your choice: " + numOfGame + "." + " Bye!");
-            }
+            case EXIT -> System.out.println("Bye-bye!");
             default -> System.out.println("Unexpected number: " + numOfGame + ". "
                         + "Please select game again.");
         }
