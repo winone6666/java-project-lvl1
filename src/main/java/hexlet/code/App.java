@@ -4,14 +4,13 @@ import java.util.Scanner;
 
 import static hexlet.code.Cli.greetingUser;
 import static hexlet.code.Engine.printGreeting;
-import static hexlet.code.games.GameCalculator.playCalculatorgame;
 import static hexlet.code.games.GameEven.playEvenGame;
+import static hexlet.code.games.GameCalculator.playCalculatorgame;
 import static hexlet.code.games.GameGCD.playGCDGame;
 import static hexlet.code.games.GamePrime.playPrimeGame;
 import static hexlet.code.games.GameProgression.playProgressionGame;
 
 public class App {
-    //check repo2
     private static final int EXIT = 0;
     private static final int GREET = 1;
     private static final int EVEN = 2;

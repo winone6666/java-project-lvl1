@@ -30,14 +30,26 @@ public class GameProgression {
             int startProgressionNum = START_NUM_MIN + getRandNum(START_NUM_MAX - START_NUM_MIN);
 
             String[] progression = generateProgression(d, lengthProgression, startProgressionNum);
-
             int indexOfHiddenNum = 1 + getRandNum(lengthProgression - 1);
-            referAnswers[i] = progression[indexOfHiddenNum];
+            referAnswers = getReferenceAnswers(progression,indexOfHiddenNum, i);
             progression[indexOfHiddenNum] = "..";
-            String question = String.join(" ", Arrays.toString(progression).split(", "));
-            questionsAnswers[0][i] = question.substring(1, question.length() - 1);
+            questionsAnswers = getQuestionsAnswers(progression, i);
+
         }
-        checkUserAnswers();
+        checkUserAnswers(questionsAnswers,referAnswers);
+    }
+
+    private static String[][] getQuestionsAnswers(String[] progression, int i) {
+        String[][] questionsAnswers = getQuestionsAndAnswers();
+        String question = String.join(" ", Arrays.toString(progression).split(", "));
+        questionsAnswers[0][i] = question.substring(1, question.length() - 1);
+        return questionsAnswers;
+    }
+
+    private static String[] getReferenceAnswers(String[] progression, int hidSymbol, int i) {
+        String[] referAnswers = getReferenceAnswer();
+        referAnswers[i] = progression[hidSymbol];
+        return referAnswers;
     }
 
     public static String[] generateProgression(int d, int lengthProgression, int startProgressionNum) {

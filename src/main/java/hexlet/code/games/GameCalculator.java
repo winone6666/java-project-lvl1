@@ -10,12 +10,13 @@ import static hexlet.code.Engine.checkUserAnswers;
 import static hexlet.code.Util.getRandNum;
 
 public class GameCalculator {
-    public static final int MIN_COUNT_OPERANDS = 1;
-    public static final int MAX_COUNT_OPERANDS = 3;
+    private static final int MIN_COUNT_OPERANDS = 1;
+    private static final int MAX_COUNT_OPERANDS = 3;
 
     public static void playCalculatorgame() {
-        String[][] questionsAnswers = getQuestionsAndAnswers();
-        String[] referAnswers = getReferenceAnswer();
+
+        String[][] questionsAnswers = new String[0][];
+        String[] refAnswers = new String[0];
 
         descriptionGame(GAME_CALC_NAME);
 
@@ -23,25 +24,35 @@ public class GameCalculator {
             String randOperator = getOperator();
             int randMultFirst = getRandNum(MULTIPLIER_TO_GET_INT);
             int randMultSecond = getRandNum(MULTIPLIER_TO_GET_INT);
-
-            String question = randMultFirst + " "
-                    + randOperator + " "
-                    + randMultSecond;
-
-            questionsAnswers[0][i] = question;
-
-            referAnswers[i] = Integer.toString(getRightAnswer(randOperator, randMultFirst, randMultSecond));
+            questionsAnswers = getQuestionsAnswers(randMultFirst, randMultSecond, randOperator, i);
+            refAnswers = getReferenceAnswers(randMultFirst, randMultSecond, randOperator, i);
         }
-        checkUserAnswers();
+        checkUserAnswers(questionsAnswers,refAnswers);
     }
 
-    public static String getOperator() {
+    private static String[][] getQuestionsAnswers(int num1, int num2, String operator, int i) {
+
+        String[][] questionsAnswers = getQuestionsAndAnswers();
+        String question = num1 + " "
+                + operator + " "
+                + num2;
+        questionsAnswers[0][i] = question;
+        return questionsAnswers;
+    }
+
+    private static String[] getReferenceAnswers(int num1, int num2, String operator, int i) {
+        String[] referAnswers = getReferenceAnswer();
+        referAnswers[i] = Integer.toString(getRightAnswer(operator, num1, num2));
+        return referAnswers;
+    }
+
+    private static String getOperator() {
         String[] operators = {"-", "+", "*"};
         int randOperator = getRandNum((MAX_COUNT_OPERANDS - MIN_COUNT_OPERANDS) + MIN_COUNT_OPERANDS);
         return operators[randOperator];
     }
 
-    public static int getRightAnswer(String operator, int multFirst, int multSecond) {
+    private static int getRightAnswer(String operator, int multFirst, int multSecond) {
         int rightAnswer = 0;
 
         if (operator.equals("-")) {

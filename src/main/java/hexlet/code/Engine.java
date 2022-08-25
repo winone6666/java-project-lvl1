@@ -36,14 +36,14 @@ public class Engine {
         System.out.println("Question: " + expression);
     }
 
-    public static void checkUserAnswers() {
+    public static void checkUserAnswers(String[][] questionsAnswers, String[] referAnswers) {
 
         for (int i = COUNT_OF_QUESTION; i > 0; i--) {
-            askQustion(QUESTIONS_ANSWERS[0][i - 1]);
-            QUESTIONS_ANSWERS[1][i - 1] = getUserAnswer();
-            userAnswer = QUESTIONS_ANSWERS[1][i - 1];
+            askQustion(questionsAnswers[0][i - 1]);
+            questionsAnswers[1][i - 1] = getUserAnswer();
+            userAnswer = questionsAnswers[1][i - 1];
             System.out.println("Your answer: " + userAnswer);
-            refAnswer = REFERENCE_ANSWERS[i - 1];
+            refAnswer = referAnswers[i - 1];
 
             if (userAnswer.equals(refAnswer)) {
                 System.out.println("Correct!");

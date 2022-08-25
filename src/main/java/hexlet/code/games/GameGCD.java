@@ -17,21 +17,32 @@ public class GameGCD {
         descriptionGame(GAME_GCD_NAME);
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
-
             int numFirst = getRandNum(MULTIPLIER_TO_GET_INT);
             int numSecond = getRandNum(MULTIPLIER_TO_GET_INT);
-            String nFirst = Integer.toString(numFirst);
-            String nSecond = Integer.toString(numSecond);
-            String question = nFirst + " " + nSecond;
-            questionsAnswers[0][i] = question;
-
-            while (numSecond != 0) {
-                int temp = numFirst % numSecond;
-                numFirst = numSecond;
-                numSecond = temp;
-            }
-            referAnswers[i] = Integer.toString(numFirst);
+            questionsAnswers = getQuestionsAnswers(numFirst, numSecond, i);
+            referAnswers = getReferenceAnswers(numFirst, numSecond, i);
         }
-        checkUserAnswers();
+        checkUserAnswers(questionsAnswers,referAnswers);
+    }
+
+    private static String[][] getQuestionsAnswers(int numFirst, int numSecond, int i) {
+
+        String[][] questionsAnswers = getQuestionsAndAnswers();
+        String nFirst = Integer.toString(numFirst);
+        String nSecond = Integer.toString(numSecond);
+        String question = nFirst + " " + nSecond;
+        questionsAnswers[0][i] = question;
+        return questionsAnswers;
+    }
+
+    private static String[] getReferenceAnswers(int numFirst, int numSecond, int i) {
+        String[] referAnswers = getReferenceAnswer();
+        while (numSecond != 0) {
+            int temp = numFirst % numSecond;
+            numFirst = numSecond;
+            numSecond = temp;
+        }
+        referAnswers[i] = Integer.toString(numFirst);
+        return referAnswers;
     }
 }
