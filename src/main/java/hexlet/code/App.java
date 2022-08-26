@@ -59,7 +59,7 @@ public class App {
             }
             case EXIT -> System.out.println("Bye-bye!");
             default -> System.out.println("Unexpected number: " + numOfGame + ". "
-                        + "Please select game again.");
+                    + "Please select game again.");
         }
     }
 }

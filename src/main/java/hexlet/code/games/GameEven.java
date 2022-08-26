@@ -12,21 +12,18 @@ import static hexlet.code.Util.getRandNum;
 public class GameEven {
 
     public static void playEvenGame() {
-        String[][] questionsAnswers = new String[0][];
-        String[] refAnswers = new String[0];
-
+        String[] referAnswers = getReferenceAnswer();
+        String[][] questionsAnswers = getQuestionsAndAnswers();
         descriptionGame(GAME_EVEN_NAME);
-
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
             int randNum = getRandNum(MULTIPLIER_TO_GET_INT);
             questionsAnswers = getQuestionsAnswers(randNum, i);
-            refAnswers = getReferenceAnswers(randNum, i);
+            referAnswers = getReferenceAnswers(randNum, i);
         }
-        checkUserAnswers(questionsAnswers,refAnswers);
+        checkUserAnswers(questionsAnswers, referAnswers);
     }
 
     private static String[][] getQuestionsAnswers(int randNum, int i) {
-
         String[][] questionsAnswers = getQuestionsAndAnswers();
         String question = Integer.toString(randNum);
         questionsAnswers[0][i] = question;

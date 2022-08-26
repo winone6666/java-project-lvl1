@@ -15,18 +15,16 @@ public class GameGCD {
         String[] referAnswers = getReferenceAnswer();
         String[][] questionsAnswers = getQuestionsAndAnswers();
         descriptionGame(GAME_GCD_NAME);
-
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
             int numFirst = getRandNum(MULTIPLIER_TO_GET_INT);
             int numSecond = getRandNum(MULTIPLIER_TO_GET_INT);
             questionsAnswers = getQuestionsAnswers(numFirst, numSecond, i);
             referAnswers = getReferenceAnswers(numFirst, numSecond, i);
         }
-        checkUserAnswers(questionsAnswers,referAnswers);
+        checkUserAnswers(questionsAnswers, referAnswers);
     }
 
     private static String[][] getQuestionsAnswers(int numFirst, int numSecond, int i) {
-
         String[][] questionsAnswers = getQuestionsAndAnswers();
         String nFirst = Integer.toString(numFirst);
         String nSecond = Integer.toString(numSecond);

@@ -28,15 +28,16 @@ public class GameProgression {
             int lengthProgression = LEN_PROGRESS_MIN + getRandNum(LEN_PROGRESS_MAX - LEN_PROGRESS_MIN);
             int d = D_MIN + getRandNum(D_MAX - D_MIN);
             int startProgressionNum = START_NUM_MIN + getRandNum(START_NUM_MAX - START_NUM_MIN);
-
             String[] progression = generateProgression(d, lengthProgression, startProgressionNum);
+
             int indexOfHiddenNum = 1 + getRandNum(lengthProgression - 1);
-            referAnswers = getReferenceAnswers(progression,indexOfHiddenNum, i);
+
+            referAnswers = getReferenceAnswers(progression, indexOfHiddenNum, i);
             progression[indexOfHiddenNum] = "..";
             questionsAnswers = getQuestionsAnswers(progression, i);
 
         }
-        checkUserAnswers(questionsAnswers,referAnswers);
+        checkUserAnswers(questionsAnswers, referAnswers);
     }
 
     private static String[][] getQuestionsAnswers(String[] progression, int i) {

@@ -23,7 +23,7 @@ public class GamePrime {
             questionsAnswers = getQuestionsAnswers(randNum, i);
             referAnswers = getReferenceAnswers(randNum, i);
         }
-        checkUserAnswers(questionsAnswers,referAnswers);
+        checkUserAnswers(questionsAnswers, referAnswers);
     }
 
     private static String[][] getQuestionsAnswers(int randNum, int i) {

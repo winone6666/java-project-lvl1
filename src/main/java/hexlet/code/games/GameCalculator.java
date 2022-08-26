@@ -14,10 +14,8 @@ public class GameCalculator {
     private static final int MAX_COUNT_OPERANDS = 3;
 
     public static void playCalculatorgame() {
-
-        String[][] questionsAnswers = new String[0][];
-        String[] refAnswers = new String[0];
-
+        String[] referAnswers = getReferenceAnswer();
+        String[][] questionsAnswers = getQuestionsAndAnswers();
         descriptionGame(GAME_CALC_NAME);
 
         for (int i = 0; i < COUNT_OF_QUESTION; i++) {
@@ -25,9 +23,9 @@ public class GameCalculator {
             int randMultFirst = getRandNum(MULTIPLIER_TO_GET_INT);
             int randMultSecond = getRandNum(MULTIPLIER_TO_GET_INT);
             questionsAnswers = getQuestionsAnswers(randMultFirst, randMultSecond, randOperator, i);
-            refAnswers = getReferenceAnswers(randMultFirst, randMultSecond, randOperator, i);
+            referAnswers = getReferenceAnswers(randMultFirst, randMultSecond, randOperator, i);
         }
-        checkUserAnswers(questionsAnswers,refAnswers);
+        checkUserAnswers(questionsAnswers, referAnswers);
     }
 
     private static String[][] getQuestionsAnswers(int num1, int num2, String operator, int i) {
