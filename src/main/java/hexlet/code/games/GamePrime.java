@@ -14,6 +14,7 @@ import static hexlet.code.Util.getRandNum;
 public class GamePrime {
 
     public static void playPrimeGame() {
+
         String[] referAnswers = getReferenceAnswer();
         String[][] questionsAnswers = getQuestionsAndAnswers();
         descriptionGame(GAME_PRIME_NAME);
