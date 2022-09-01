@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 
 public class Engine {
-    //Add coment to commit all diff
     public static final int MULTIPLIER_TO_GET_INT = 100;
     public static final int COUNT_OF_QUESTION = 3;
     public static final int COUNT_OF_PAIR_QUESTIONS_ANSWERS = 2;
